@@ -97,3 +97,28 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Firebase configuration files
+/[Aa]ssets/google-services.json
+/[Aa]ssets/google-services.json.meta
+/[Aa]ssets/GoogleService-Info.plist
+/[Aa]ssets/GoogleService-Info.plist.meta
+/[Aa]ssets/StreamingAssets/google-services-desktop.json
+/[Aa]ssets/StreamingAssets/google-services-desktop.json.meta
+/[Aa]ssets/EditordefaultResources/Firebase/Editor/GoogleService-Info.plist
+
+# Firebase generated files
+/[Aa]ssets/Firebase/
+/[Aa]ssets/Firebase.meta
+/[Aa]ssets/Plugins/Android/Firebase/
+/[Aa]ssets/Plugins/iOS/Firebase/
+
+# External Dependency Manager (EDM4U)
+/[Aa]ssets/ExternalDependencyManager/
+/[Aa]ssets/ExternalDependencyManager.meta
+/[Aa]ssets/GeneratedLocalRepo/
+/[Aa]ssets/GeneratedLocalRepo.meta
+/[Aa]ssets/Plugins/Android/*.aar
+/[Aa]ssets/Plugins/Android/*.aar.meta
+ProjectSettings/AndroidResolverDependencies.xml
+ProjectSettings/GvhProjectSettings.xml

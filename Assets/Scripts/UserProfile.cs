@@ -1,12 +1,13 @@
+﻿using System;
+using System.Security;
 using UnityEngine;
-using System;
 
 [Serializable]
 public class UserProfile
 {
     public string nickname;
     public string email;
-    public long createdAt;
+    public long createdAt; //긴 이름
 
     public UserProfile()
     {
@@ -17,7 +18,7 @@ public class UserProfile
     {
         this.nickname = nickname;
         this.email = email;
-        this.createdAt = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        this.createdAt = DateTimeOffset.UtcNow.ToUnixTimeSeconds(); //UtcNow : 런던시간 / ToUnixTimeSeconds : 유니티 시간으로 변환 함수
     }
 
     public string ToJson()
@@ -29,6 +30,4 @@ public class UserProfile
     {
         return JsonUtility.FromJson<UserProfile>(json);
     }
-    
-    
 }

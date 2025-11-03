@@ -1,25 +1,22 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Firebase;
 using Cysharp.Threading.Tasks;
-using Cysharp.Threading.Tasks.CompilerServices;
 
+//파이어 베이스 초기화 클래스 -> 파이어 베이스 최상위 클래스가 될 것이다.
 public class FirebaseInitializer : MonoBehaviour
 {
-    // 싱글톤 instance
     private static FirebaseInitializer instance;
     public static FirebaseInitializer Instance => instance;
 
-    // Firebase 초기화 상태
     private bool isInitialized = false;
     public bool IsInitialized => isInitialized;
 
-    // FirebaseApp 인스턴스
     private FirebaseApp firebaseApp;
     public FirebaseApp FirebaseApp => firebaseApp;
 
     private void Awake()
     {
-        if (instance == null)
+        if(instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -35,7 +32,7 @@ public class FirebaseInitializer : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (instance == this)
+        if(instance == this)
         {
             instance = null;
         }
@@ -52,19 +49,18 @@ public class FirebaseInitializer : MonoBehaviour
             {
                 firebaseApp = FirebaseApp.DefaultInstance;
                 isInitialized = true;
-                
-                Debug.Log($"[Firebase] 초기화 성공! {firebaseApp.Name}");
+
+                Debug.Log($"[Firebase] 초기화 성공 {firebaseApp.Name}");
             }
             else
             {
-                Debug.LogError($"[Firebase] 초기화 오류: {status}");
+                Debug.Log($"[Firebase] 초기화 오류: {status}");
                 isInitialized = false;
             }
-
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"[Firebase] 초기화 오류: {ex.Message}");
+            Debug.Log($"[Firebase] 초기화 오류: {ex.Message}");
             isInitialized = false;
         }
     }
